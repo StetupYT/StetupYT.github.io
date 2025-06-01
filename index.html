@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stetup - Sims 4 Boot Style</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+  body {
+    margin: 0;
+    background: #0a0a12;
+    color: #00ff94;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: background-color 0.4s, color 0.4s;
+  }
+  body.dark-mode {
+    background: #0a0a12;
+    color: #00ff94;
+  }
+  button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #00ff94;
+    border: none;
+    color: #0a0a12;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-family: 'Orbitron', monospace;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    z-index: 10;
+  }
+  button:hover {
+    background: #00cc77;
+  }
+
+  .pulse-glow {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    animation: pulseGlow 3s infinite;
+  }
+
+  .pulse-glow img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: block;
+    filter: drop-shadow(0 0 6px #00ff94);
+    animation: slowSpin 20s linear infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow:
+        0 0 10px 4px #00ff94,
+        0 0 30px 10px #00ff94,
+        0 0 60px 20px #00ff94;
+    }
+    50% {
+      box-shadow:
+        0 0 20px 6px #00ff94,
+        0 0 40px 14px #00ff94,
+        0 0 80px 28px #00ff94;
+    }
+  }
+
+  @keyframes slowSpin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  h1 {
+    margin-top: 30px;
+    font-size: 3.5rem;
+    letter-spacing: 0.15em;
+    text-shadow:
+      0 0 8px #00ff94,
+      0 0 15px #00ff94;
+  }
+
+</style>
+</head>
+<body class="dark-mode">
+
+  <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <div class="pulse-glow">
+    <img src="https://github.com/StetupYT/StetupYT/blob/main/budmyimage.jpeg?raw=true" alt="Stetup Profile Picture" />
+  </div>
+
+  <h1>STETUP</h1>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
+
+</body>
+</html>
